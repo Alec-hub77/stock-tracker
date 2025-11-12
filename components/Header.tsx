@@ -3,7 +3,11 @@ import Link from "next/link";
 import { NavItimes } from "./NavItimes";
 import { UserDropdown } from "./UserDropdown";
 
-const Header = () => {
+interface Props {
+  user: User;
+}
+
+const Header = ({ user }: Props) => {
   return (
     <header className="sticky top-0 header">
       <div className="container header-wrapper">
@@ -19,7 +23,7 @@ const Header = () => {
         <nav className="hidden sm:block">
           <NavItimes />
         </nav>
-        <UserDropdown />
+        <UserDropdown user={user} />
       </div>
     </header>
   );
